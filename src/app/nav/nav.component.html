@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['']">
+        <span class="glyphicon glyphicon-home"></span>
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a [routerLink]="['products']">Home</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['', 'watchlist']">Watchlist&nbsp;-&nbsp;<span>4</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>

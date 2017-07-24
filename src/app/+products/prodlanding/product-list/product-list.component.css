@@ -1,0 +1,22 @@
+.view {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #222;
+}
+
+.view-tile-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.view-tile-list div:last-child { margin-left: 10px; }
+.view-tile-list div span {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.active-view { color: red; }
+.product-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
