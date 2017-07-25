@@ -1,18 +1,18 @@
 <div class="view">
   <div class="view-tile-list">
-    <div id="filter_viewtile" (click)="th()">
-      <span class="glyphicon glyphicon-th" [class.active-view]="show"></span>
-    </div>
     <div id="filter_viewlist" (click)="list()">
-      <span class="glyphicon glyphicon-list" [class.active-view]="!show"></span>
+      <span class="glyphicon glyphicon-list" [class.active-view]="show"></span>
+    </div>
+    <div id="filter_viewtile" (click)="th()">
+      <span class="glyphicon glyphicon-th" [class.active-view]="!show"></span>
     </div>
   </div>
 </div>
 <div class="product-items">
-  <ng-container *ngIf="show">
+  <ng-container *ngIf="!show">
     <app-product-item-tile [product]="product" *ngFor="let product of products"></app-product-item-tile>
   </ng-container>
-  <ng-container *ngIf="!show">
+  <ng-container *ngIf="show">
     <app-product-item [product]="product" *ngFor="let product of products"></app-product-item>
   </ng-container>
 </div>

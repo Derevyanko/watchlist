@@ -1,3 +1,19 @@
-<p>
-  watchlist works!
-</p>
+<div class="product-item" *ngFor="let product of shoppingCartItems">
+  <a routerLink="/gallery/{{ product.id }}">
+    <img class="product-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png" alt="">
+  </a>  <div class="content">
+    <div class="meta">
+      <div class="product-sku"><span class="characteristics">SKU #</span> {{ product.id }}</div>
+    </div>
+    <div class="category"><span class="characteristics">Category:</span> {{ product.category }}</div>
+    <div class="description"><span class="characteristics">Description:</span> {{ product.description }}</div>
+    <div class="systitle"><span class="characteristics">SysTitle:</span> {{ product.systitle }}</div>
+    <div class="fireresistance"><span class="characteristics">Fireresistance:</span> {{ product.fireresistance }}</div>
+    <div class="soundproof"><span class="characteristics">Soundproof:</span> {{ product.soundproof }}</div>
+    <div class="wallthickness"><span class="characteristics">Wallthickness:</span> {{ product.wallthickness }}</div>
+    <div class="dampingstrength"><span class="characteristics">Dampingstrength:</span> {{ product.dampingstrength }}</div>
+  </div>
+  <div>
+    <button md-raised-button (click)="removeProduct(product)">Remove</button>
+  </div>
+</div>

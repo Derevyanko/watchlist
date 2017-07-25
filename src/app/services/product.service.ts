@@ -9,17 +9,21 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class ProductService {
 
+  private productsList$: Observable<Product[]>;
+
   constructor(private http: Http) {
+    this.productsList$ = this.getDataFromJson();
   }
 
-  getDataFromJson() {
+  /* Get Data From JSON file */
+  getDataFromJson(): Observable<any> {
     return this.http.get('assets/data.json')
       .map((resp: Response) => {
         let prodList = resp.json().product;
-        let productsList: Product[] = [];
+        let list: Product[] = [];
         for (let index in prodList) {
           let product = prodList[index].data;
-          productsList.push({
+          list.push({
             id: product.id_product,
             category: product.categoryTitle,
             description: product.systemdescription,
@@ -30,9 +34,13 @@ export class ProductService {
             dampingstrength: product.dampingstrength
           })
         }
-        return productsList;
+        return list;
       })
       .catch((error: any)=> { return Observable.throw(error);});
+  }
+
+  getProducts(): Observable<Product[]> {
+    return this.productsList$;
   }
 
 }

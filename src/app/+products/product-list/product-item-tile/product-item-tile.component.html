@@ -1,6 +1,7 @@
 <md-card class="product-card">
-  <img class="product-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png" alt="">
-  <md-card-content>
+  <a routerLink="gallery/{{ product.id }}">
+    <img class="product-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png" alt="">
+  </a>  <md-card-content>
     <div class="product-sku"><span class="characteristics">SKU #</span> {{ product.id }}</div>
     <div class="category"><span class="characteristics">Category:</span> {{ product.category }}</div>
     <div class="description"><span class="characteristics">Description:</span> {{ product.description }}</div>
@@ -11,6 +12,6 @@
     <div class="dampingstrength"><span class="characteristics">Dampingstrength:</span> {{ product.dampingstrength }}</div>
   </md-card-content>
   <md-card-actions>
-    <button md-mini-fab><md-icon>shopping cart</md-icon></button>
+    <button md-mini-fab (click)="addToCart(product)"><md-icon>shopping cart</md-icon></button>
   </md-card-actions>
 </md-card>

@@ -1,0 +1,13 @@
+<div class="nav-bar">
+  <a md-raised-button [routerLink]="['/']">Back</a>
+</div>
+<hr>
+<md-grid-list cols="4" rowHeight="300px">
+  <md-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+    {{tile.text}}
+  </md-grid-tile>
+</md-grid-list>

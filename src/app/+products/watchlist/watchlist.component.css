@@ -1,0 +1,15 @@
+.product-item {
+  display: flex;
+  padding: 0 0 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #222;
+}
+
+.product-item .characteristics {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.content { padding: 0 15px; }
+.product-image { height: 130px; }

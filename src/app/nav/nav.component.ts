@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs/Observable";
+import {Product} from "../model/product";
+import {WatchlistService} from "../services/watchlist.service";
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  public watchlistProducts$: Observable<Product[]>;
+
+  constructor(private watchlistService: WatchlistService) { }
 
   ngOnInit() {
+    this.watchlistProducts$ = this.watchlistService.getItems();
+    this.watchlistProducts$.subscribe(data => data);
   }
 
 }

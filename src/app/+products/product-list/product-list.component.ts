@@ -1,6 +1,6 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import {Product} from "../../../model/product";
-import {ProductService} from "../../../services/product.service";
+import {Component, OnInit, HostListener, Input} from '@angular/core';
+import {Product} from "../../model/product";
+import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'app-product-list',
@@ -8,17 +8,12 @@ import {ProductService} from "../../../services/product.service";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [];
+  @Input() public products: Product[] = [];
   show: boolean = true;
 
-  constructor(private prodService: ProductService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.prodService.getDataFromJson()
-      .subscribe(
-        data => this.products = data,
-        error => console.log(error)
-      );
   }
 
   @HostListener('window:scroll', ['$event']) onScroll(event) {
@@ -28,12 +23,12 @@ export class ProductListComponent implements OnInit {
     }
   }
 
-  th(event: any) {
-    this.show = true;
+  th() {
+    this.show = false;
   }
 
-  list(event: any) {
-    this.show = false;
+  list() {
+    this.show = true;
   }
 
 }

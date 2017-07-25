@@ -1,5 +1,7 @@
 <div class="product-item">
-  <img class="product-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png" alt="">
+  <a routerLink="gallery/{{ product.id }}">
+    <img class="product-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png" alt="">
+  </a>
   <div class="content">
     <div class="meta">
       <div class="product-sku"><span class="characteristics">SKU #</span> {{ product.id }}</div>
@@ -13,6 +15,6 @@
     <div class="dampingstrength"><span class="characteristics">Dampingstrength:</span> {{ product.dampingstrength }}</div>
   </div>
   <div>
-    <button md-raised-button>WatchList</button>
+    <button md-raised-button (click)="addToCart(product)">WatchList</button>
   </div>
 </div>
