@@ -1,3 +1,42 @@
-<p>
-  product-filters works!
-</p>
+<h2 class="text-center">Filters</h2>
+<hr>
+<ul class="filter-list">
+  <li>
+    <md-input-container>
+      <input mdInput placeholder="Search..." [mdAutocomplete]="auto">
+    </md-input-container>
+
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let state of filteredStates | async" [value]="state">
+        {{ state }}
+      </md-option>
+    </md-autocomplete>
+  </li>
+  <li>
+    <section class="example-section">
+      <md-checkbox class="example-margin" [(ngModel)]="fireresistance">Fireresistance</md-checkbox>
+    </section>
+  </li>
+  <li>
+    <md-slider min="35" max="70" step="5" [(ngModel)]="soundproof"></md-slider>
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Soundproof" [(ngModel)]="soundproof">
+    </md-input-container>
+  </li>
+  <li>
+    <md-slider min="1" max="500" step="5" [(ngModel)]="wallthickness"></md-slider>
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Wallthickness" [(ngModel)]="wallthickness">
+    </md-input-container>
+  </li>
+  <li></li>
+  <li>
+    <section class="example-section">
+      <label class="example-margin">DocTyp:</label>
+      <md-radio-group [(ngModel)]="align">
+        <md-radio-button class="example-margin" value="start">Datasheets</md-radio-button>
+        <md-radio-button class="example-margin" value="end">Pricelists</md-radio-button>
+      </md-radio-group>
+    </section>
+  </li>
+</ul>

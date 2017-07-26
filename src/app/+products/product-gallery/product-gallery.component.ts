@@ -16,7 +16,6 @@ export class ProductGalleryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
 }

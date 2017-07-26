@@ -1,0 +1,8 @@
+hr {
+  border-top: 1px solid #222;
+}
+
+.filter-list { list-style: none; }
+.filter-list li {
+  margin-bottom: 20px;
+}
