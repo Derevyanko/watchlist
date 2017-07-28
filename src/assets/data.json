@@ -40,7 +40,7 @@
         "componentthickness_raw":"88-158",
         "structuralpanels_raw":"323",
         "plankthickness_raw":"_12.5/12.5/12.5",
-        "fireresistance":"BSP 90",
+        "fireresistance":"",
         "systemdescription":"Beplankung: 3x12.5 mm Riga\r\nUnterkonstruktion:  Vorsatzschale mit C-Wandprofil\r\nDämmung: 40 bis 100 mm Mineralwolle  Isoresist Piano Plus oder  RIF der Baustoffklasse A1, Schmelzpunkt ≥ 1000°C",
         "id_product_raw":284,
         "dampingstrength":"40-100",
@@ -157,7 +157,7 @@
         "componentthickness_raw":"",
         "structuralpanels_raw":"332",
         "plankthickness_raw":"__18",
-        "fireresistance":"EI 30",
+        "fireresistance":"",
         "systemdescription":"Beplankung: 18 mm  RB\r\nUnterkonstruktion:  Abhänger und CD-Profil\r\nDämmung: keine",
         "id_product_raw":197,
         "dampingstrength":"",
@@ -4837,7 +4837,7 @@
         "componentthickness_raw":"125",
         "structuralpanels_raw":"323",
         "plankthickness_raw":"12.5_12.5",
-        "fireresistance":"REI 30",
+        "fireresistance":"",
         "systemdescription":"Beplankung je Wandseite: 12.5 mm Riga\r\nHolzständerquerschnitt: 80/100 mm\r\nDämmung: keine",
         "id_product_raw":53,
         "dampingstrength":"",
@@ -4854,7 +4854,8 @@
         "soundproof_filter_raw":"",
         "airnoiseimprovement_raw":"",
         "id_product":53,
-        "areaload":""
+        "areaload":"",
+        "doctyp": "datasheets"
       },
       "filterdata":{
         "systemtitle":"HS 100/125",
@@ -6241,7 +6242,7 @@
         "componentthickness_raw":"145",
         "structuralpanels_raw":"323",
         "plankthickness_raw":"12.5_12.5",
-        "fireresistance":"REI 60",
+        "fireresistance":"",
         "systemdescription":"Beplankung je Wandseite: 12.5 mm Riga\r\nHolzständerquerschnitt: 60/120 mm\r\nDämmung: 120 mm Mineralwolle  Isoresist Piano Plus oder  RIF der Baustoffklasse A1, Schmelzpunkt ≥ 1000°C",
         "id_product_raw":59,
         "dampingstrength":"120",
@@ -9517,7 +9518,7 @@
         "componentthickness_raw":"190 ",
         "structuralpanels_raw":"323",
         "plankthickness_raw":"2x12.5_2x12.5",
-        "fireresistance":"REI 60",
+        "fireresistance":"",
         "systemdescription":"Beplankung je Wandseite: 2x12.5 mm Riga\r\nHolzständerquerschnitt: 140/140 mm\r\nDämmung: keine",
         "id_product_raw":65,
         "dampingstrength":"",
@@ -9985,7 +9986,7 @@
         "componentthickness_raw":"125",
         "structuralpanels_raw":"323",
         "plankthickness_raw":"12.5_12.5",
-        "fireresistance":"REI 30",
+        "fireresistance":"",
         "systemdescription":"Beplankung je Wandseite: 12.5 mm Riga\r\nHolzständerquerschnitt: 45/100 mm\r\nDämmung: 100 mm Mineralwolle  Isoresist Piano Plus oder  RIF der Baustoffklasse A1, Schmelzpunkt ≥ 1000°C",
         "id_product_raw":56,
         "dampingstrength":"100",
@@ -10002,7 +10003,8 @@
         "soundproof_filter_raw":"39",
         "airnoiseimprovement_raw":"",
         "id_product":56,
-        "areaload":""
+        "areaload":"",
+        "doctyp": "pricelists"
       },
       "filterdata":{
         "systemtitle":"HS 100/125",

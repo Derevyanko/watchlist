@@ -31,7 +31,8 @@ export class ProductService {
             fireresistance: product.fireresistance,
             soundproof: product.soundproof,
             wallthickness: product.wallthickness,
-            dampingstrength: product.dampingstrength
+            dampingstrength: product.dampingstrength,
+            doctyp: product.doctyp
           })
         }
         return list;

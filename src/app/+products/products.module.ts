@@ -12,6 +12,8 @@ import { ProductFiltersComponent } from './product-filters/product-filters.compo
 import { ProductItemComponent } from './product-list/product-item/product-item.component';
 import { ProductGalleryComponent } from './product-gallery/product-gallery.component';
 import { ProductItemTileComponent } from './product-list/product-item-tile/product-item-tile.component';
+import { CheckboxFilterPipe } from "./product-list/product-list.component";
+import { DocTypFilterPipe } from "./product-list/product-list.component";
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { ProductItemTileComponent } from './product-list/product-item-tile/produ
     ProductFiltersComponent,
     ProductItemComponent,
     ProductGalleryComponent,
-    ProductItemTileComponent
+    ProductItemTileComponent,
+    CheckboxFilterPipe,
+    DocTypFilterPipe
   ],
   exports: [
     ProductsComponent

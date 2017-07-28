@@ -1,9 +1,14 @@
 <div class="row">
   <div class="col-md-8">
     <app-product-list
-      [products]="products"></app-product-list>
+      [products]="products"
+      [enableChbFilter]="chbChecked"
+      [docTyp]="radioDocTyp"></app-product-list>
   </div>
   <div class="col-md-4">
-    <app-product-filters></app-product-filters>
+    <app-product-filters
+      (checkboxChecked)="chbSelected($event)"
+      (datasheetsChecked)="datasheetsRadio($event)"
+      (pricelistsChecked)="pricelistsRadio($event)"></app-product-filters>
   </div>
 </div>

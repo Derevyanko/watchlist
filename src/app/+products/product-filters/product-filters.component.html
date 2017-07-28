@@ -3,39 +3,37 @@
 <ul class="filter-list">
   <li>
     <md-input-container>
-      <input mdInput placeholder="Search..." [mdAutocomplete]="auto">
+      <input
+        mdInput
+        placeholder="Search..."
+        #searchBox
+        (keyup)="search(searchBox.value)">
     </md-input-container>
-
-    <md-autocomplete #auto="mdAutocomplete">
-      <md-option *ngFor="let state of filteredStates | async" [value]="state">
-        {{ state }}
-      </md-option>
-    </md-autocomplete>
   </li>
   <li>
     <section class="example-section">
-      <md-checkbox class="example-margin" [(ngModel)]="fireresistance">Fireresistance</md-checkbox>
+      <md-checkbox #checkbox class="example-margin" (change)="getFireresistance(checkbox.checked)">Fireresistance</md-checkbox>
     </section>
   </li>
   <li>
-    <md-slider min="35" max="70" step="5" [(ngModel)]="soundproof"></md-slider>
+    <md-slider min="35" max="70" step="5"></md-slider>
     <md-input-container class="example-full-width">
-      <input mdInput placeholder="Soundproof" [(ngModel)]="soundproof">
+      <input mdInput placeholder="Soundproof">
     </md-input-container>
   </li>
   <li>
-    <md-slider min="1" max="500" step="5" [(ngModel)]="wallthickness"></md-slider>
+    <md-slider min="1" max="500" step="5"></md-slider>
     <md-input-container class="example-full-width">
-      <input mdInput placeholder="Wallthickness" [(ngModel)]="wallthickness">
+      <input mdInput placeholder="Wallthickness">
     </md-input-container>
   </li>
   <li></li>
   <li>
     <section class="example-section">
       <label class="example-margin">DocTyp:</label>
-      <md-radio-group [(ngModel)]="align">
-        <md-radio-button class="example-margin" value="start">Datasheets</md-radio-button>
-        <md-radio-button class="example-margin" value="end">Pricelists</md-radio-button>
+      <md-radio-group>
+        <md-radio-button class="example-margin" value="datasheets" (change)="handleRadio($event.value)">Datasheets</md-radio-button>
+        <md-radio-button class="example-margin" value="pricelists" (change)="handleRadio($event.value)">Pricelists</md-radio-button>
       </md-radio-group>
     </section>
   </li>

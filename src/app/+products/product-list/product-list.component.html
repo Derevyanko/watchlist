@@ -10,9 +10,13 @@
 </div>
 <div class="product-items">
   <ng-container *ngIf="!show">
-    <app-product-item-tile [product]="product" *ngFor="let product of products"></app-product-item-tile>
+    <app-product-item-tile
+      [product]="product"
+      *ngFor="let product of products | checkboxFilter:enableChbFilter | doctypFilter:docTyp"></app-product-item-tile>
   </ng-container>
   <ng-container *ngIf="show">
-    <app-product-item [product]="product" *ngFor="let product of products"></app-product-item>
+    <app-product-item
+      [product]="product"
+      *ngFor="let product of products | checkboxFilter:enableChbFilter | doctypFilter:docTyp"></app-product-item>
   </ng-container>
 </div>

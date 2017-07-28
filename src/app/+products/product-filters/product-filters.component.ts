@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl} from "@angular/forms";
-
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/operator/map';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { FiltersService } from "../../services/filters.service";
 
 @Component({
   selector: 'app-product-filters',
@@ -10,84 +7,34 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./product-filters.component.css']
 })
 export class ProductFiltersComponent implements OnInit {
-  stateCtrl: FormControl;
-  filteredStates: any;
+  @Output() checkboxChecked = new EventEmitter<boolean>();
 
-  states = [
-    'Alabama',
-    'Alaska',
-    'Arizona',
-    'Arkansas',
-    'California',
-    'Colorado',
-    'Connecticut',
-    'Delaware',
-    'Florida',
-    'Georgia',
-    'Hawaii',
-    'Idaho',
-    'Illinois',
-    'Indiana',
-    'Iowa',
-    'Kansas',
-    'Kentucky',
-    'Louisiana',
-    'Maine',
-    'Maryland',
-    'Massachusetts',
-    'Michigan',
-    'Minnesota',
-    'Mississippi',
-    'Missouri',
-    'Montana',
-    'Nebraska',
-    'Nevada',
-    'New Hampshire',
-    'New Jersey',
-    'New Mexico',
-    'New York',
-    'North Carolina',
-    'North Dakota',
-    'Ohio',
-    'Oklahoma',
-    'Oregon',
-    'Pennsylvania',
-    'Rhode Island',
-    'South Carolina',
-    'South Dakota',
-    'Tennessee',
-    'Texas',
-    'Utah',
-    'Vermont',
-    'Virginia',
-    'Washington',
-    'West Virginia',
-    'Wisconsin',
-    'Wyoming',
-  ];
+  @Output() datasheetsChecked = new EventEmitter<string>();
+  @Output() pricelistsChecked = new EventEmitter<string>();
 
-  /* Fireresistance checkbox */
-  fireresistance = false;
-
-  /* Soundproof Slider-bar */
-  soundproof;
-
-  /* Wallthickness Slider-bar */
-  wallthickness;
-
-  constructor() {
-    this.stateCtrl = new FormControl();
-    this.filteredStates = this.stateCtrl.valueChanges
-      .startWith(null)
-      .map(name => this.filterStates(name));
+  constructor(private filterService: FiltersService) {
   }
 
   ngOnInit() {
   }
 
-  filterStates(val: string) {
-    return val ? this.states.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)
-      : this.states;
+  /* Search Filter */
+  search(term: string): void {
+    this.filterService.search(term);
+  }
+
+  /* Fireresistance */
+  getFireresistance(value: boolean): void {
+    this.checkboxChecked.emit(value);
+  }
+
+  /* DocTyp */
+  handleRadio(value: string): void {
+    if (value === 'datasheets') {
+      this.datasheetsChecked.emit(value);
+    } else {
+      this.pricelistsChecked.emit(value);
+    }
   }
 
 }

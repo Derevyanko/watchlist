@@ -7,4 +7,5 @@ export class Product {
   soundproof?: number;
   wallthickness?: number;
   dampingstrength?: any;
+  doctyp?: string;
 }
